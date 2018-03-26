@@ -193,7 +193,7 @@ def analyze_papers_and_init_clusters(author_name, COUNT):
 
     uni_id_generator = 0
     coauthor_2_uni_id = dict()
-    affiliatio9n_2_uni_id = dict()
+    affiliation_2_uni_id = dict()
     venue_2_uni_id = dict()
 
     for paper_affiliation in paper_affiliations:
