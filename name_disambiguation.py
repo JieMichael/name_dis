@@ -5,6 +5,8 @@ import spacy
 import numpy as np
 import datetime
 import sys
+import os
+import _pickle as cpickle
 
 stopwords = set()
 for line in open('./stopwords_ace.txt'):
@@ -168,6 +170,17 @@ def add_in_inverted_indices(inverted_indices, paper_idx, feature_uni_id):
         inverted_indices[feature_uni_id] = list()
     inverted_indices[feature_uni_id].append(paper_idx)# papers about this unit
 
+def analyze_papers_and_init_clusters_local(author_name, COUNT):
+    local_dir = "../data/%s"%(author_name)
+    if(os.path.exists(local_dir) == False):
+        return None, None, None, None, None
+
+    papers = cpickle.load(open(os.path.join(local_dir,"papers_%s"%(author_name))))
+    clusters = cpickle.load(open(os.path.join(local_dir,"clusters_%s"%(author_name))))
+    paper_idx_2_cluster_id = cpickle.load(open(os.path.join(local_dir,"paper_idx_2_cluster_id_%s"%(author_name))))
+    inverted_indices = cpickle.load(open(os.path.join(local_dir,"inverted_indices_%s"%(author_name))))
+    author_id_set = cpickle.load(open(os.path.join(local_dir,"author_id_set_%s"%(author_name))))
+    return papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set
 
 def analyze_papers_and_init_clusters(author_name, COUNT):
     paper_affiliations = get_paper_affiliations_by_author_name(author_name)
@@ -544,7 +557,7 @@ def clustering(author_name, COUNT):
     # analyze papers and initialize clusters
     papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set = analyze_papers_and_init_clusters(
         author_name, COUNT)
-
+   
     db_endtime = datetime.datetime.now()
 
     if papers is None:
@@ -582,6 +595,12 @@ def clustering(author_name, COUNT):
     return len(papers), clusters, author_id_set, (db_endtime - starttime).seconds / 60.0, (
     cl_endtime - db_endtime).seconds / 60.0
 
+def name_disambiguation_local(author_name,COUNT):
+    paper_count, clusters, author_id_set, db_time, cl_time = clustering(author_name, COUNT)
+    local_dir = "../data/%s"%(author_name)
+
+    cpickle.dump(clusters,open(os.path.join(local_dir,"result_cluster_%s"%(author_name))))
+    
 
 def name_disambiguation(author_name, id_gen, process_id, COUNT):
     paper_count, clusters, author_id_set, db_time, cl_time = clustering(author_name, COUNT)
