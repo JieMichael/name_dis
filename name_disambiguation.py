@@ -166,7 +166,7 @@ def link_type_2_weight(link_type, except_type):
 def add_in_inverted_indices(inverted_indices, paper_idx, feature_uni_id):
     if feature_uni_id not in inverted_indices:
         inverted_indices[feature_uni_id] = list()
-    inverted_indices[feature_uni_id].append(paper_idx)
+    inverted_indices[feature_uni_id].append(paper_idx)# papers about this unit
 
 
 def analyze_papers_and_init_clusters(author_name, COUNT):
@@ -282,7 +282,7 @@ def init_paper_edges_and_ngbrs(papers, inverted_indices):
     paper_strong_edges = set()
     paper_tmp_edges = [[0 for col in range(paper_count)] for row in range(paper_count)]
 
-    for i in range(paper_count):
+    for i in range(paper_count):#improve: compute it when use it; title_sim could be replaced by a dict()
         for j in range(i + 1, paper_count):
             title_sim = compute_title_similarity(papers[i], papers[j])
             title_sim_matrix[i, j] = title_sim
@@ -387,8 +387,9 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
                 clusters[cluster_j].ngbrs.add(cluster_i)
 
     # generate clusters' link_type_2_ngbrs
+    #improve: merge those in one step
     for i in range(len(clusters)):
-        for j in range(i + 1, len(clusters)):
+        for j in range(i + 1, len(clusters)):#improve: i.ngbrs
             if len(cluster_initial_edges[i][j]) != 0:
                 for link_type in cluster_initial_edges[i][j]:
                     if link_type[-1] == 'w':
@@ -405,6 +406,7 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
         for i_link_type, i_ngbrs in clusters[i].link_type_2_ngbrs.iteritems():
 
             # Dijkstra's algorithm
+            #improve: use dfs or floyd. in small graph dfs is effective
             S = set()  # visited
             Q = set(range(len(clusters)))  # unvisited
 
@@ -434,7 +436,7 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
                         for uv_link_type in uv_link_types:
                             if uv_link_type == i_link_type:
                                 continue
-                            alt = dist[u] + link_type_2_weight(uv_link_type, i_link_type)
+                            alt = dist[u] + link_type_2_weight(uv_link_type, i_link_type)#improve: change weight
                             if alt < dist[v]:
                                 dist[v] = alt
                 dist[u] = INFINITY
