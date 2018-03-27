@@ -1,0 +1,200 @@
+2018-03-27 13:34:48,671 - __main__ - INFO - aimin liu is finished in 0.8575015068054199
+2018-03-27 13:34:49,163 - __main__ - INFO - aiping wang is finished in 0.4912540912628174
+2018-03-27 13:34:50,073 - __main__ - INFO - aman ullah is finished in 0.908928632736206
+2018-03-27 13:34:50,720 - __main__ - INFO - an wang is finished in 0.6468861103057861
+2018-03-27 13:34:51,559 - __main__ - INFO - b yang is finished in 0.8393278121948242
+2018-03-27 13:34:52,329 - __main__ - INFO - baoliang lu is finished in 0.7698466777801514
+2018-03-27 13:34:52,940 - __main__ - INFO - bei wu is finished in 0.6097526550292969
+2018-03-27 13:34:53,406 - __main__ - INFO - beibei li is finished in 0.4666287899017334
+2018-03-27 13:34:54,074 - __main__ - INFO - beifen shen is finished in 0.6674511432647705
+2018-03-27 13:34:54,764 - __main__ - INFO - benyuan gu is finished in 0.6879298686981201
+2018-03-27 13:34:55,311 - __main__ - INFO - bernard brogliato is finished in 0.547121524810791
+2018-03-27 13:34:55,897 - __main__ - INFO - biao liu is finished in 0.5853767395019531
+2018-03-27 13:34:56,412 - __main__ - INFO - bin qi is finished in 0.5147340297698975
+2018-03-27 13:34:56,978 - __main__ - INFO - bin qian is finished in 0.5659341812133789
+2018-03-27 13:34:57,643 - __main__ - INFO - bing lin is finished in 0.6648132801055908
+2018-03-27 13:34:58,221 - __main__ - INFO - bing shao is finished in 0.5776517391204834
+2018-03-27 13:34:59,199 - __main__ - INFO - bingya liu is finished in 0.9787807464599609
+2018-03-27 13:34:59,866 - __main__ - INFO - binxing fang is finished in 0.6669189929962158
+2018-03-27 13:35:00,806 - __main__ - INFO - bo ren is finished in 0.939746618270874
+2018-03-27 13:35:01,758 - __main__ - INFO - bo xiang is finished in 0.9521842002868652
+2018-03-27 13:35:02,185 - __main__ - INFO - c feng is finished in 0.42681169509887695
+2018-03-27 13:35:02,685 - __main__ - INFO - c s tang is finished in 0.49996066093444824
+2018-03-27 13:35:03,305 - __main__ - INFO - c song is finished in 0.6199078559875488
+2018-03-27 13:35:03,797 - __main__ - INFO - c x zhang is finished in 0.4923372268676758
+2018-03-27 13:35:04,766 - __main__ - INFO - c y su is finished in 0.9678912162780762
+2018-03-27 13:35:05,251 - __main__ - INFO - ce zhang is finished in 0.4843735694885254
+2018-03-27 13:35:05,252 - __main__ - INFO - chai is finished in 0.0009992122650146484
+2018-03-27 13:35:05,765 - __main__ - INFO - changfeng chen is finished in 0.5134921073913574
+2018-03-27 13:35:07,028 - __main__ - INFO - changsheng wang is finished in 1.2633187770843506
+2018-03-27 13:35:07,588 - __main__ - INFO - changsheng zhang is finished in 0.5591142177581787
+2018-03-27 13:35:08,577 - __main__ - INFO - changyuan yu is finished in 0.9881906509399414
+2018-03-27 13:35:09,511 - __main__ - INFO - chao peng is finished in 0.9330382347106934
+2018-03-27 13:35:10,422 - __main__ - INFO - chao qi is finished in 0.9109489917755127
+2018-03-27 13:35:11,296 - __main__ - INFO - chao wei is finished in 0.8737993240356445
+2018-03-27 13:35:12,035 - __main__ - INFO - chaoshu tang is finished in 0.7381274700164795
+2018-03-27 13:35:12,513 - __main__ - INFO - chen shao is finished in 0.4779531955718994
+2018-03-27 13:35:13,349 - __main__ - INFO - chen zhong is finished in 0.8360147476196289
+2018-03-27 13:35:13,836 - __main__ - INFO - cheng gong is finished in 0.487377405166626
+2018-03-27 13:35:14,642 - __main__ - INFO - cheng jiang is finished in 0.8043131828308105
+2018-03-27 13:35:15,637 - __main__ - INFO - cheng ma is finished in 0.9945671558380127
+2018-03-27 13:35:16,196 - __main__ - INFO - cheng yu is finished in 0.5586750507354736
+2018-03-27 13:35:16,659 - __main__ - INFO - cheng zeng is finished in 0.46230506896972656
+2018-03-27 13:35:17,194 - __main__ - INFO - chengcheng liu is finished in 0.5346083641052246
+2018-03-27 13:35:17,709 - __main__ - INFO - chengwei wang is finished in 0.5140342712402344
+2018-03-27 13:35:18,534 - __main__ - INFO - chengxiang wang is finished in 0.824913740158081
+2018-03-27 13:35:18,998 - __main__ - INFO - chenxi wang is finished in 0.46445250511169434
+2018-03-27 13:35:19,334 - __main__ - INFO - chenyang shen is finished in 0.33490514755249023
+2018-03-27 13:35:19,849 - __main__ - INFO - chingyao huang is finished in 0.5145022869110107
+2018-03-27 13:35:20,378 - __main__ - INFO - chong huang is finished in 0.5295963287353516
+2018-03-27 13:35:20,963 - __main__ - INFO - chong shen is finished in 0.5847682952880859
+2018-03-27 13:35:21,657 - __main__ - INFO - chongjin xie is finished in 0.693518877029419
+2018-03-27 13:35:22,783 - __main__ - INFO - chongxiu yu is finished in 1.1259353160858154
+2018-03-27 13:35:23,390 - __main__ - INFO - chuan shi is finished in 0.6073668003082275
+2018-03-27 13:35:23,793 - __main__ - INFO - chuan xu is finished in 0.4017622470855713
+2018-03-27 13:35:24,741 - __main__ - INFO - chun feng is finished in 0.9482483863830566
+2018-03-27 13:35:25,746 - __main__ - INFO - chunhui yang is finished in 1.0049951076507568
+2018-03-27 13:35:26,311 - __main__ - INFO - chunjiang wang is finished in 0.5655083656311035
+2018-03-27 13:35:27,130 - __main__ - INFO - chunli liu is finished in 0.8178672790527344
+2018-03-27 13:35:27,595 - __main__ - INFO - chunli wang is finished in 0.46468615531921387
+2018-03-27 13:35:28,448 - __main__ - INFO - chunlin wang is finished in 0.8520545959472656
+2018-03-27 13:35:29,016 - __main__ - INFO - chunling liu is finished in 0.5673668384552002
+2018-03-27 13:35:29,534 - __main__ - INFO - chunsheng zhao is finished in 0.5172162055969238
+2018-03-27 13:35:30,118 - __main__ - INFO - chunxi zhang is finished in 0.5841207504272461
+2018-03-27 13:35:31,144 - __main__ - INFO - chunying li is finished in 1.026167631149292
+2018-03-27 13:35:31,697 - __main__ - INFO - cornelius bennhold is finished in 0.5528974533081055
+2018-03-27 13:35:32,020 - __main__ - INFO - d he is finished in 0.3236393928527832
+2018-03-27 13:35:32,607 - __main__ - INFO - d tan is finished in 0.5864560604095459
+2018-03-27 13:35:32,610 - __main__ - INFO - d tornier is finished in 0.0030052661895751953
+2018-03-27 13:35:33,187 - __main__ - INFO - d x wang is finished in 0.5762615203857422
+2018-03-27 13:35:34,011 - __main__ - INFO - dacheng wang is finished in 0.8242318630218506
+2018-03-27 13:35:34,500 - __main__ - INFO - dacheng zhang is finished in 0.48865413665771484
+2018-03-27 13:35:35,370 - __main__ - INFO - dalin zhang is finished in 0.8696355819702148
+2018-03-27 13:35:36,457 - __main__ - INFO - dan song is finished in 1.0871338844299316
+2018-03-27 13:35:37,306 - __main__ - INFO - dan sun is finished in 0.8490860462188721
+2018-03-27 13:35:38,059 - __main__ - INFO - dandan chen is finished in 0.7528119087219238
+2018-03-27 13:35:39,155 - __main__ - INFO - dapeng chen is finished in 1.0967037677764893
+2018-03-27 13:35:39,980 - __main__ - INFO - dawei xu is finished in 0.8250370025634766
+2018-03-27 13:35:40,754 - __main__ - INFO - dayi hu is finished in 0.7732079029083252
+2018-03-27 13:35:41,455 - __main__ - INFO - deying li is finished in 0.7017531394958496
+2018-03-27 13:35:42,143 - __main__ - INFO - di huang is finished in 0.6862146854400635
+2018-03-27 13:35:43,096 - __main__ - INFO - di lu is finished in 0.9536325931549072
+2018-03-27 13:35:43,969 - __main__ - INFO - di sun is finished in 0.8723545074462891
+2018-03-27 13:35:44,508 - __main__ - INFO - ding yuan is finished in 0.5387706756591797
+2018-03-27 13:35:45,456 - __main__ - INFO - dongbin zhao is finished in 0.9471006393432617
+2018-03-27 13:35:46,124 - __main__ - INFO - donghui wang is finished in 0.6681957244873047
+2018-03-27 13:35:46,126 - __main__ - INFO - dongsheng is finished in 0.0020036697387695312
+2018-03-27 13:35:46,941 - __main__ - INFO - dongsheng xu is finished in 0.8142070770263672
+2018-03-27 13:35:47,854 - __main__ - INFO - duan chen is finished in 0.9126207828521729
+2018-03-27 13:35:48,350 - __main__ - INFO - duo wang is finished in 0.49597740173339844
+2018-03-27 13:35:49,031 - __main__ - INFO - e weinan is finished in 0.6815228462219238
+2018-03-27 13:35:49,034 - __main__ - INFO - elvire bouvier is finished in 0.0030074119567871094
+2018-03-27 13:35:49,782 - __main__ - INFO - enge wang is finished in 0.7470488548278809
+2018-03-27 13:35:50,054 - __main__ - INFO - erqiang chen is finished in 0.27243709564208984
+2018-03-27 13:35:50,869 - __main__ - INFO - f lin is finished in 0.8147909641265869
+2018-03-27 13:35:51,607 - __main__ - INFO - fan lin is finished in 0.7380712032318115
+2018-03-27 13:35:52,155 - __main__ - INFO - fang du is finished in 0.5476136207580566
+2018-03-27 13:35:52,749 - __main__ - INFO - fang hao is finished in 0.5937073230743408
+2018-03-27 13:35:53,542 - __main__ - INFO - fang qian is finished in 0.7930552959442139
+2018-03-27 13:35:54,056 - __main__ - INFO - fang shen is finished in 0.5135869979858398
+2018-03-27 13:35:54,712 - __main__ - INFO - fang wen is finished in 0.6557209491729736
+2018-03-27 13:35:55,325 - __main__ - INFO - fangang zeng is finished in 0.6133403778076172
+2018-03-27 13:35:56,056 - __main__ - INFO - fangchun yang is finished in 0.7308311462402344
+2018-03-27 13:35:56,621 - __main__ - INFO - fei jiang is finished in 0.5656630992889404
+2018-03-27 13:35:57,130 - __main__ - INFO - feng du is finished in 0.5091240406036377
+2018-03-27 13:35:57,517 - __main__ - INFO - fenghua liu is finished in 0.38663268089294434
+2018-03-27 13:35:58,145 - __main__ - INFO - fengxiang wang is finished in 0.6255009174346924
+2018-03-27 13:35:58,984 - __main__ - INFO - fengyan li is finished in 0.8389797210693359
+2018-03-27 13:36:00,161 - __main__ - INFO - g l zhang is finished in 1.1772806644439697
+2018-03-27 13:36:00,674 - __main__ - INFO - g m zhang is finished in 0.5134687423706055
+2018-03-27 13:36:01,511 - __main__ - INFO - g s de hoog is finished in 0.8371763229370117
+2018-03-27 13:36:02,302 - __main__ - INFO - gang fang is finished in 0.7908046245574951
+2018-03-27 13:36:02,839 - __main__ - INFO - gang lin is finished in 0.5353589057922363
+2018-03-27 13:36:03,402 - __main__ - INFO - gao yan is finished in 0.5632407665252686
+2018-03-27 13:36:04,021 - __main__ - INFO - ge liu is finished in 0.6187810897827148
+2018-03-27 13:36:04,927 - __main__ - INFO - ge yang is finished in 0.9051263332366943
+2018-03-27 13:36:05,781 - __main__ - INFO - geng yang is finished in 0.853661298751831
+2018-03-27 13:36:06,120 - __main__ - INFO - gregory j herczeg is finished in 0.33899664878845215
+2018-03-27 13:36:06,718 - __main__ - INFO - guang xu is finished in 0.5976967811584473
+2018-03-27 13:36:07,258 - __main__ - INFO - guanghua liu is finished in 0.5400834083557129
+2018-03-27 13:36:07,940 - __main__ - INFO - guangming xie is finished in 0.6819248199462891
+2018-03-27 13:36:08,564 - __main__ - INFO - guangyi liu is finished in 0.624547004699707
+2018-03-27 13:36:09,131 - __main__ - INFO - guangyu sun is finished in 0.5660061836242676
+2018-03-27 13:36:09,706 - __main__ - INFO - guangyu zhu is finished in 0.5734808444976807
+2018-03-27 13:36:10,319 - __main__ - INFO - guanyu chen is finished in 0.6135022640228271
+2018-03-27 13:36:10,977 - __main__ - INFO - guibin wang is finished in 0.657973051071167
+2018-03-27 13:36:11,402 - __main__ - INFO - guirong wang is finished in 0.42467713356018066
+2018-03-27 13:36:11,927 - __main__ - INFO - guisheng zhang is finished in 0.5254812240600586
+2018-03-27 13:36:12,389 - __main__ - INFO - guochen jia is finished in 0.46129870414733887
+2018-03-27 13:36:13,011 - __main__ - INFO - guocheng liu is finished in 0.6228725910186768
+2018-03-27 13:36:13,870 - __main__ - INFO - guodong chen is finished in 0.857797384262085
+2018-03-27 13:36:14,804 - __main__ - INFO - guohong wang is finished in 0.934579610824585
+2018-03-27 13:36:15,699 - __main__ - INFO - guohua wu is finished in 0.8945105075836182
+2018-03-27 13:36:16,150 - __main__ - INFO - guoliang liu is finished in 0.4513256549835205
+2018-03-27 13:36:16,709 - __main__ - INFO - guoqing hu is finished in 0.557342529296875
+2018-03-27 13:36:17,468 - __main__ - INFO - guoquan lu is finished in 0.7596628665924072
+2018-03-27 13:36:18,052 - __main__ - INFO - guoyi zhang is finished in 0.5841422080993652
+2018-03-27 13:36:18,856 - __main__ - INFO - guoying wang is finished in 0.8039510250091553
+2018-03-27 13:36:19,329 - __main__ - INFO - h b chen is finished in 0.47238874435424805
+2018-03-27 13:36:19,990 - __main__ - INFO - h cheng is finished in 0.6615035533905029
+2018-03-27 13:36:20,443 - __main__ - INFO - h h zhang is finished in 0.4523804187774658
+2018-03-27 13:36:21,301 - __main__ - INFO - h j gao is finished in 0.8580303192138672
+2018-03-27 13:36:21,587 - __main__ - INFO - h long is finished in 0.2868025302886963
+2018-03-27 13:36:21,857 - __main__ - INFO - h t li is finished in 0.2693929672241211
+2018-03-27 13:36:22,587 - __main__ - INFO - h t liu is finished in 0.7295641899108887
+2018-03-27 13:36:22,986 - __main__ - INFO - h x chen is finished in 0.3986358642578125
+2018-03-27 13:36:23,833 - __main__ - INFO - h y xu is finished in 0.847480297088623
+2018-03-27 13:36:24,581 - __main__ - INFO - h z zhang is finished in 0.7472338676452637
+2018-03-27 13:36:25,292 - __main__ - INFO - hai guo is finished in 0.7111403942108154
+2018-03-27 13:36:25,801 - __main__ - INFO - hai hu is finished in 0.5095701217651367
+2018-03-27 13:36:26,323 - __main__ - INFO - haibin su is finished in 0.5213534832000732
+2018-03-27 13:36:26,891 - __main__ - INFO - haifei zhang is finished in 0.5685694217681885
+2018-03-27 13:36:27,380 - __main__ - INFO - haifeng ji is finished in 0.48845934867858887
+2018-03-27 13:36:28,249 - __main__ - INFO - haihui wang is finished in 0.8680386543273926
+2018-03-27 13:36:29,073 - __main__ - INFO - haijun huang is finished in 0.8228006362915039
+2018-03-27 13:36:30,047 - __main__ - INFO - haishan zeng is finished in 0.9733357429504395
+2018-03-27 13:36:30,048 - __main__ - INFO - halyo is finished in 0.001005411148071289
+2018-03-27 13:36:30,557 - __main__ - INFO - han jiang is finished in 0.509479284286499
+2018-03-27 13:36:31,465 - __main__ - INFO - hang sun is finished in 0.9077050685882568
+2018-03-27 13:36:32,172 - __main__ - INFO - hao long is finished in 0.7068052291870117
+2018-03-27 13:36:32,704 - __main__ - INFO - hao zhao is finished in 0.5321438312530518
+2018-03-27 13:36:33,269 - __main__ - INFO - hao zhong is finished in 0.564211368560791
+2018-03-27 13:36:34,063 - __main__ - INFO - harry g perros is finished in 0.7942070960998535
+2018-03-27 13:36:34,646 - __main__ - INFO - he zhao is finished in 0.5833179950714111
+2018-03-27 13:36:35,190 - __main__ - INFO - helen leonard is finished in 0.5438671112060547
+2018-03-27 13:36:35,190 - __main__ - INFO - heng is finished in 0.0
+2018-03-27 13:36:35,821 - __main__ - INFO - heng ji is finished in 0.6293609142303467
+2018-03-27 13:36:36,430 - __main__ - INFO - hengfu zou is finished in 0.6080589294433594
+2018-03-27 13:36:36,868 - __main__ - INFO - heping cheng is finished in 0.43689703941345215
+2018-03-27 13:36:37,459 - __main__ - INFO - heqing huang is finished in 0.5916359424591064
+2018-03-27 13:36:38,255 - __main__ - INFO - hong cui is finished in 0.7959444522857666
+2018-03-27 13:36:38,697 - __main__ - INFO - hong meng is finished in 0.44123315811157227
+2018-03-27 13:36:39,644 - __main__ - INFO - hong miao is finished in 0.9477415084838867
+2018-03-27 13:36:40,641 - __main__ - INFO - hong tao is finished in 0.9970183372497559
+2018-03-27 13:36:41,549 - __main__ - INFO - hong wen is finished in 0.9077517986297607
+2018-03-27 13:36:41,987 - __main__ - INFO - hongbo yang is finished in 0.43637633323669434
+2018-03-27 13:36:42,558 - __main__ - INFO - hongguang wang is finished in 0.5716981887817383
+2018-03-27 13:36:43,091 - __main__ - INFO - hongjie liu is finished in 0.5325260162353516
+2018-03-27 13:36:43,900 - __main__ - INFO - hongli chen is finished in 0.8085079193115234
+2018-03-27 13:36:45,011 - __main__ - INFO - hongliang zhu is finished in 1.1103153228759766
+2018-03-27 13:36:45,012 - __main__ - INFO - hongmei is finished in 0.0009953975677490234
+2018-03-27 13:36:46,109 - __main__ - INFO - hongtao sun is finished in 1.096764087677002
+2018-03-27 13:36:46,460 - __main__ - INFO - hongtao yang is finished in 0.350569486618042
+2018-03-27 13:36:47,377 - __main__ - INFO - hongwei guo is finished in 0.9175889492034912
+2018-03-27 13:36:47,379 - __main__ - INFO - hongxia is finished in 0.0
+2018-03-27 13:36:48,048 - __main__ - INFO - hongxiang liu is finished in 0.6685621738433838
+2018-03-27 13:36:48,957 - __main__ - INFO - hongxin zhang is finished in 0.9081134796142578
+2018-03-27 13:36:49,649 - __main__ - INFO - hongxing dai is finished in 0.6913847923278809
+2018-03-27 13:36:50,222 - __main__ - INFO - hongyan guo is finished in 0.5733973979949951
+2018-03-27 13:36:50,861 - __main__ - INFO - hongyan zhu is finished in 0.6387929916381836
+2018-03-27 13:36:51,520 - __main__ - INFO - hu zhao is finished in 0.658372163772583
+2018-03-27 13:36:52,346 - __main__ - INFO - hua shao is finished in 0.8263144493103027
+2018-03-27 13:36:53,223 - __main__ - INFO - huadong ma is finished in 0.8774662017822266
+2018-03-27 13:36:54,122 - __main__ - INFO - huai yang is finished in 0.8982203006744385
+2018-03-27 13:36:54,568 - __main__ - INFO - huan guo is finished in 0.44627928733825684
+2018-03-27 13:36:55,234 - __main__ - INFO - huan yu is finished in 0.6647820472717285
+2018-03-27 13:36:55,677 - __main__ - INFO - huawei zhang is finished in 0.4432797431945801
+2018-03-27 13:36:56,835 - __main__ - INFO - hui mao is finished in 1.156749963760376
+2018-03-27 13:36:57,641 - __main__ - INFO - hui tong is finished in 0.8061339855194092
+2018-03-27 13:36:58,478 - __main__ - INFO - hui yin is finished in 0.8368427753448486
+2018-03-27 13:36:59,478 - __main__ - INFO - huibin xu is finished in 1.000103235244751

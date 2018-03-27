@@ -419,6 +419,9 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
     cluster_final_edges = [[dict() for col in range(len(clusters))] for row in range(len(clusters))]
 
     INFINITY = 9999
+
+
+
     for i in range(len(clusters)):
 
         for i_link_type, i_ngbrs in clusters[i].link_type_2_ngbrs.items():
