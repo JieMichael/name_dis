@@ -14,7 +14,7 @@ for line in open('./stopwords_ace.txt'):
 # print stopwords
 
 nlp = spacy.load('en_core_web_md')
-print 'spacy.load finished'
+print ('spacy.load finished')
 
 conn = MySQLdb.connect(host='202.120.36.29', port=3306, user='groupleader', passwd='onlyleaders', db='mag-new-160205',
                        charset="utf8")

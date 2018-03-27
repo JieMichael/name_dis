@@ -1,23 +1,31 @@
 # -*- coding: UTF-8 -*-
 
-import MySQLdb
+import pymysql as MySQLdb
 import spacy
 import numpy as np
 import datetime
 import sys
 
+import numpy as np
+import os
+import _pickle as cpickle
+
+'''
 stopwords = set()
 for line in open('./stopwords_ace.txt'):
     stopwords.add(line.replace('\n', '').replace('\r', ''))
 # print stopwords
-
+'''
+'''
 nlp = spacy.load('en_core_web_md')
-print 'spacy.load finished'
+print ('spacy.load finished')
+'''
 
+'''
 conn = MySQLdb.connect(host='202.120.36.29', port=3306, user='groupleader', passwd='onlyleaders', db='mag-new-160205',
                        charset="utf8")
 cursor = conn.cursor()
-
+'''
 f = open('./disambiguation_finished_authors', 'a')
 
 
@@ -31,7 +39,8 @@ class Paper:
         # self.coauthors = coauthors
         self.author_id = author_id
 
-        title_nlp = nlp(unicode(title.encode('utf-8').decode('utf-8')))
+        '''
+        title_nlp = nlp(title)
 
         title_vector_sum = np.zeros(title_nlp[0].vector.shape)
         word_count = 0
@@ -43,7 +52,7 @@ class Paper:
                 word_count += 1
         if word_count != 0:
             self.title_vector = title_vector_sum / word_count
-
+        '''
 
 class Cluster:
     def __init__(self, paper, paper_idx, affiliation_id, year):
@@ -71,7 +80,7 @@ class Cluster:
         self.paper_idx_list.extend(other.paper_idx_list)
         self.affiliations |= other.affiliations
 
-        for k, v in other.year_2_affiliations.iteritems():
+        for k, v in other.year_2_affiliations.items():
             if k in self.year_2_affiliations.keys():
                 self.year_2_affiliations[k] |= v
             else:
@@ -88,14 +97,14 @@ class Cluster:
         if len(self.affiliations | other.affiliations) > 20:
             return False
 
-        for k, v in self.year_2_affiliations.iteritems():
+        for k, v in self.year_2_affiliations.items():
             if k in other.year_2_affiliations.keys():
                 if len(v | other.year_2_affiliations[k]) > 3:
                     return False
 
         return True
 
-
+'''
 def get_paper_affiliations_by_author_name(author_name):
     #select stuname as '姓名',classname as '班级' from student inner join c lass on student.stuid=class.stuid
     #select stuname as '姓名',classname as '班级'
@@ -130,7 +139,7 @@ def get_title_venue_year_by_paper_id(paper_id):
     cursor.execute(quest_info_by_paper % paper_id)
     rs = cursor.fetchall()
     return rs
-
+'''
 
 def compute_title_similarity(paper_A, paper_B):
     vector_A = paper_A.title_vector
@@ -169,7 +178,16 @@ def add_in_inverted_indices(inverted_indices, paper_idx, feature_uni_id):
     inverted_indices[feature_uni_id].append(paper_idx)# papers about this unit
 
 def analyze_papers_and_init_clusters_local(author_name, COUNT):
-    local_dir = '../'
+    local_dir = "../data/%s"%(author_name)
+    if(os.path.exists(local_dir) == False):
+        return None, None, None, None, None
+
+    papers = cpickle.load(open(os.path.join(local_dir,"papers_%s"%(author_name)),'rb'))
+    clusters = cpickle.load(open(os.path.join(local_dir,"clusters_%s"%(author_name)),'rb'))
+    paper_idx_2_cluster_id = cpickle.load(open(os.path.join(local_dir,"paper_idx_2_cluster_id_%s"%(author_name)),'rb'))
+    inverted_indices = cpickle.load(open(os.path.join(local_dir,"inverted_indices_%s"%(author_name)),'rb'))
+    author_id_set = cpickle.load(open(os.path.join(local_dir,"author_id_set_%s"%(author_name)),'rb'))
+    return papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set 
 
 def analyze_papers_and_init_clusters(author_name, COUNT):
     paper_affiliations = get_paper_affiliations_by_author_name(author_name)
@@ -182,9 +200,7 @@ def analyze_papers_and_init_clusters(author_name, COUNT):
     #     f_big.close()
     #     return None, None, None, None, None
 
-    print str(COUNT) + '\t',
-    print author_name + '\t',
-    print '( ' + str(len(paper_affiliations)) + ' | ',
+
 
     process_count = 0
     papers = list()
@@ -265,7 +281,7 @@ def analyze_papers_and_init_clusters(author_name, COUNT):
         process_count += 1
 
     if len(clusters) == 0:
-        print ""
+        print ("")
         return None, None, None, None, None
 
     return papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set
@@ -290,7 +306,7 @@ def init_paper_edges_and_ngbrs(papers, inverted_indices):
             title_sim_matrix[i, j] = title_sim
             title_sim_matrix[j, i] = title_sim
 
-    for link_type, paper_list in inverted_indices.iteritems():
+    for link_type, paper_list in inverted_indices.items():
         for i in range(len(paper_list)):
             paper_i = paper_list[i]
             for j in range(i + 1, len(paper_list)):
@@ -359,7 +375,7 @@ def merge_strong_connected_papers(clusters, paper_idx_2_cluster_id, cluster_merg
 
 def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_ngbrs, paper_idx_2_cluster_id):
     # sort cluster by number of papers
-    sorted_clusters = sorted(clusters.iteritems(), key=lambda d: len(d[1].papers), reverse=True)
+    sorted_clusters = sorted(clusters.items(), key=lambda d: len(d[1].papers), reverse=True)
 
     # change clusters' type(dict) to list
     clusters = list()
@@ -375,7 +391,7 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
 
     for i in range(len(papers)):
         cluster_i = paper_idx_2_cluster_id[i]
-        for i_link_type, i_ngbrs in paper_weak_type_ngbrs[i].iteritems():
+        for i_link_type, i_ngbrs in paper_weak_type_ngbrs[i].items():
             papers_in_same_cluster = set(clusters[paper_idx_2_cluster_id[i]].paper_idx_list)  # including itself
             i_ngbrs -= papers_in_same_cluster
             if len(i_ngbrs) == 0:
@@ -405,7 +421,7 @@ def generate_cluster_edges(clusters, papers, paper_full_edges, paper_weak_type_n
     INFINITY = 9999
     for i in range(len(clusters)):
 
-        for i_link_type, i_ngbrs in clusters[i].link_type_2_ngbrs.iteritems():
+        for i_link_type, i_ngbrs in clusters[i].link_type_2_ngbrs.items():
 
             # Dijkstra's algorithm
             #improve: use dfs or floyd. in small graph dfs is effective
@@ -468,7 +484,7 @@ def generate_paper_similarity_dict(papers, paper_idx_2_cluster_id, paper_weak_ty
 
         cluster_i_id = paper_idx_2_cluster_id[i]
 
-        for i_link_type, i_ngbrs in paper_weak_type_ngbrs[i].iteritems():
+        for i_link_type, i_ngbrs in paper_weak_type_ngbrs[i].items():
             for j in i_ngbrs:
                 cluster_j_id = paper_idx_2_cluster_id[j]
                 if cluster_i_id == cluster_j_id:
@@ -482,7 +498,7 @@ def generate_paper_similarity_dict(papers, paper_idx_2_cluster_id, paper_weak_ty
 
 
 def hierarchical_clustering(paper_similarity_dict, paper_final_edges, clusters, paper_idx_2_cluster_id):
-    sorted_similarity_pairs = sorted(paper_similarity_dict.iteritems(), key=lambda d: d[1], reverse=True)
+    sorted_similarity_pairs = sorted(paper_similarity_dict.items(), key=lambda d: d[1], reverse=True)
 
     for pair in sorted_similarity_pairs:
         paper_A_idx = pair[0][0]
@@ -514,7 +530,7 @@ def hierarchical_clustering(paper_similarity_dict, paper_final_edges, clusters, 
 
 def merge_scattered_papers(clusters, paper_idx_2_cluster_id, title_sim_matrix, paper_all_ngbrs, paper_final_edges):
     cluster_merge_pairs = list()
-    for cluster_id, cluster in clusters.iteritems():
+    for cluster_id, cluster in clusters.items():
         if len(cluster.papers) == 1:
             paper_idx = cluster.paper_idx_list[0]
             top_indices = np.argsort(-title_sim_matrix[paper_idx, :])
@@ -540,11 +556,11 @@ def merge_scattered_papers(clusters, paper_idx_2_cluster_id, title_sim_matrix, p
 def clustering(author_name, COUNT):
     if len(author_name.split()) < 2:
         return 0, None, None, 0, 0
-
+    print ('start...',author_name)
     starttime = datetime.datetime.now()
 
     # analyze papers and initialize clusters
-    papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set = analyze_papers_and_init_clusters(
+    papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set = analyze_papers_and_init_clusters_local(
         author_name, COUNT)
 
     db_endtime = datetime.datetime.now()
@@ -552,10 +568,12 @@ def clustering(author_name, COUNT):
     if papers is None:
         return 0, None, None, 0, 0
 
+    '''
     global conn
     global cursor
     cursor.close()
     conn.close()
+'''
 
     # initialize papers' edges and ngbrs
     paper_full_edges, paper_all_ngbrs, paper_weak_type_ngbrs, \
@@ -584,76 +602,13 @@ def clustering(author_name, COUNT):
     return len(papers), clusters, author_id_set, (db_endtime - starttime).seconds / 60.0, (
     cl_endtime - db_endtime).seconds / 60.0
 
-
-def name_disambiguation(author_name, id_gen, process_id, COUNT):
+def name_disambiguation_local(author_name,COUNT):
     paper_count, clusters, author_id_set, db_time, cl_time = clustering(author_name, COUNT)
+    local_dir = "../data/%s"%(author_name)
 
-    if clusters is not None:
+    cpickle.dump(clusters,open(os.path.join(local_dir,"result_cluster_%s"%(author_name)),'wb'))
 
-        starttime = datetime.datetime.now()
 
-        sorted_cluster_dict = sorted(clusters.iteritems(), key=lambda d: len(d[1].paper_idx_list), reverse=True)
-
-        assign_author_id_set = author_id_set
-
-        for cluster in sorted_cluster_dict:
-
-            author_id_dict = dict()
-            for paper in cluster[1].papers:
-                author_id = paper.author_id
-                if author_id not in author_id_dict:
-                    author_id_dict[author_id] = 1
-                else:
-                    author_id_dict[author_id] += 1
-
-            sorted_author_id_dict = sorted(author_id_dict.iteritems(), key=lambda d: d[1], reverse=True)
-            for id in sorted_author_id_dict:
-                author_id = id[0]
-                if author_id in assign_author_id_set:
-                    cluster[1].author_id = author_id
-                    assign_author_id_set.remove(author_id)
-                    break
-            if cluster[1].author_id is None:
-                cluster[1].author_id, id_gen = generate_new_id(id_gen, process_id)
-
-        update_count = 0
-
-        print str(len(sorted_cluster_dict[0][1].paper_idx_list)) + ' )\t',
-        # print str(datetime.datetime.now()) + '\t\t',
-
-        global cursor
-        global conn
-        conn = MySQLdb.connect(host='202.120.36.29', port=3306, user='groupleader', passwd='onlyleaders',
-                               db='mag-new-160205',
-                               charset="utf8")
-        cursor = conn.cursor()
-
-        for cluster_id, cluster in sorted_cluster_dict:
-            new_author_ids = set()
-            for paper in cluster.papers:
-                if cluster.author_id != paper.author_id:
-                    update_count += 1
-                    # print update_count
-
-                    cursor.execute('UPDATE PaperAuthorAffiliations_tmp SET AuthorID="' + cluster.author_id
-                                   + '" WHERE PaperID="' + paper.paper_id + '"' + ' AND AuthorID = "' + paper.author_id + '"')
-                    # if update_count % 200 == 0:
-                    #     conn.commit()
-                    if cluster.author_id[0] == process_id:
-                        new_author_ids.add(cluster.author_id)
-            for new_author_id in new_author_ids:
-                cursor.execute("INSERT INTO NewAuthors VALUES ('%s','%s')" % (new_author_id, author_name))
-        conn.commit()
-
-        f.write(
-            author_name + '\t' + str(paper_count) + '\t' + str(len(sorted_cluster_dict[0][1].paper_idx_list)) + '\n')
-
-        up_endtime = datetime.datetime.now()
-        print '( ' + str(db_time) + ' | ' + str(cl_time) + ' | ' + str(
-            (up_endtime - starttime).seconds / 60.0) + ' )'
-        # print update_count
-
-    return id_gen
 
 
 def generate_new_id(id_gen, process_id):
