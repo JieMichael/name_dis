@@ -177,8 +177,7 @@ def add_in_inverted_indices(inverted_indices, paper_idx, feature_uni_id):
         inverted_indices[feature_uni_id] = list()
     inverted_indices[feature_uni_id].append(paper_idx)# papers about this unit
 
-def analyze_papers_and_init_clusters_local(author_name, COUNT):
-    local_dir = "../data/%s"%(author_name)
+def analyze_papers_and_init_clusters_local(author_name, COUNT, local_dir):
     if(os.path.exists(local_dir) == False):
         return None, None, None, None, None
 
@@ -556,15 +555,15 @@ def merge_scattered_papers(clusters, paper_idx_2_cluster_id, title_sim_matrix, p
     return clusters
 
 
-def clustering(author_name, COUNT):
+def clustering(author_name, COUNT, save_path):
     if len(author_name.split()) < 2:
         return 0, None, None, 0, 0
-    print ('start...',author_name)
+    #print ('start...',author_name)
     starttime = datetime.datetime.now()
 
     # analyze papers and initialize clusters
     papers, clusters, paper_idx_2_cluster_id, inverted_indices, author_id_set = analyze_papers_and_init_clusters_local(
-        author_name, COUNT)
+        author_name, COUNT, save_path)
 
     db_endtime = datetime.datetime.now()
 
@@ -605,12 +604,12 @@ def clustering(author_name, COUNT):
     return len(papers), clusters, author_id_set, (db_endtime - starttime).seconds / 60.0, (
     cl_endtime - db_endtime).seconds / 60.0
 
-def name_disambiguation_local(author_name,COUNT):
-    paper_count, clusters, author_id_set, db_time, cl_time = clustering(author_name, COUNT)
-    local_dir = "../data/%s"%(author_name)
+def name_disambiguation_local(author_name,COUNT, save_path,logger):
+    paper_count, clusters, author_id_set, db_time, cl_time = clustering(author_name, COUNT,save_path)
+    
 
-    cpickle.dump(clusters,open(os.path.join(local_dir,"result_cluster_%s"%(author_name)),'wb'))
-
+    cpickle.dump(clusters,open(os.path.join(save_path,"result_cluster_%s"%(author_name)),'wb'))
+    #logger.info("saved in "+os.path.join(save_path,"result_cluster_%s"%(author_name)))
 
 
 

@@ -6,10 +6,11 @@ import os
 import logging
 import configparser
 import spacy 
+import numpy as np
 
 logger = logging.getLogger(__name__)
 logger.setLevel(level = logging.INFO)
-handler = logging.FileHandler("log.txt")
+handler = logging.FileHandler("log2.txt")
 handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
@@ -32,24 +33,9 @@ for line in open('./stopwords_ace.txt'):
 logger.info('stop word read over')
 
 
-author_names_to_process = []
-max_count = 100000000
-COUNT = 0
-last_count = 0
-for line in open('../AuthorNameIn985.txt',encoding = 'utf-8'):
-        COUNT += 1
-        if COUNT % 10000000 == 0:
-            print (time.now(), COUNT)
-            sys.stdout.flush()
-
-        if last_count < COUNT <= max_count:
-            author_names_to_process.append(line.replace('\n', ''))
-        elif COUNT > max_count:
-            break
-logger.info('read 985 over')
 
 
-import numpy as np
+
 
 class Paper:
     def __init__(self, paper_id, title, author_id):
@@ -267,6 +253,31 @@ config.read('config')
 cnt = int(config.get('count','count_in_985'))
 save_cnt =int(config.get('count','count_for_save'))
 
+#find done name
+dirct = '../data'
+author_names_to_process_done = []
+for root,dirs,files in os.walk(dirct):
+    for file in files:
+        file = str(file)
+        if(file.find('author_id_set_')!=-1):
+            name = file[14:]
+
+            if(name not in author_names_to_process_done):
+                author_names_to_process_done.append(name)
+
+#find aim name
+author_names_to_process = []
+f = open('author_paper_num.txt')
+author_papers = {}
+for line in f.readlines():
+    line = line.split('\t')
+    line[1] = line[1].replace('\n','')
+    line[1] = int(line[1])
+    if(line[1]>200 and line[1]<300 and line[0] not in author_names_to_process_done):
+        author_names_to_process.append(line[0])
+
+logger.info("read author_names_to_process over, len is:"+str(len(author_names_to_process)))
+
 for i in range(cnt,len(author_names_to_process)):
     
     if(i %1000==0):
@@ -282,6 +293,7 @@ for i in range(cnt,len(author_names_to_process)):
             logger.info("save_cnt is: "+str(save_cnt)+" "+name)
         if(save_cnt%1000 == 0):
             save_dir = "../data/"+str(save_cnt)
+            logger.info("now save in:"+save_dir)
             if(os.path.exists(save_dir)==False):
                 os.makedirs(save_dir)
         
